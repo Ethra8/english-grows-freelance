@@ -37,7 +37,7 @@ else:
 
 
 ALLOWED_HOSTS = [
-    'https://english-grows-freelance-315524665b00.herokuapp.com/',  # actual Heroku host
+    'english-grows-freelance-315524665b00.herokuapp.com/',  # actual Heroku host
     'english-grows-freelance.herokuapp.com',
     'english-grows.com',
     'www.english-grows.com',
