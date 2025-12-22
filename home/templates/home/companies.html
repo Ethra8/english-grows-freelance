@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags % }
+
+
+{% block page_header%}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div id="companies" class="container h-100">
+    <div class="row h-100">
+        <div class="col-12 col-md-7 my-auto ml-3 mr-3 ml-md-0 mr-md-0 pl-0 pr-0 pl-xs-1 pr-xs-1 pr-xl-5">
+            <h1 class="display-4 text-white font-xs-small">
+                <strong>Professional Training</strong> <br>for your Business
+            </h1>
+            <div class="my-5">
+                <div class="row">
+                    <div class="col-9 mb-4 mr-0">
+                        <h2 class="text-white">Let professional tutors guide your team where you want it to be.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-5 my-auto" >
+           
+            <form id="contact-form" class="mt-3" action="{% url 'companies' %}" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button id="submit-button-companies" class="btn btn-block rounded-pill btn-custom">
+                    <span class="font-weight-bold">Send</span>
+                    <span class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

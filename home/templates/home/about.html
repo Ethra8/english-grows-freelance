@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header%}
+<div class="container header-container d-none">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="overlay2"></div>
+<div id="about" class="container h-100 w-100">
+    <div class="row h-100">
+        <div class="col-12 col-lg-7 my-auto ml-md-0 mr-md-0 px-0">
+            <div class="my-auto">
+                <h1 class="eg-title mb-3">
+                  About Us
+                </h1>    
+            </div>  
+            <hr>
+        </div>
+        <div class="col-12 col-lg-7 my-3 ml-md-0 mr-md-0 px-0">
+            <div class="my-auto">
+                <p>Welcome to English Grows, where we offer high-quality <strong>online English classes</strong>, designed and tailored by our <strong>certified English teacher</strong> team, to meet the diverse needs of both individual learners and companies. We are your destination for effective English learning, providing flexible options to help you <strong>learn English</strong> at your own pace.</p>
+                <p>Whether you're an individual looking to advance your skills through flexible, <strong>live lessons</strong>, or a company seeking for <strong>business custom training solutions</strong> for your team, we're here to help you succeed with personalized guidance.</p>
+                <p><strong class="text-uppercase">For B2C customers</strong>, we provide a range of options to suit your learning style and schedule. Choose from:</p>
+                <ul>
+                    <li class="mb-3"><strong>Individual Lesson Packs -</strong> ideal for those who prefer a one-on-one approach and the flexibility to learn English at their own pace with live lessons from certified teachers.</li>
+                    <li><strong>Reduced Group Courses -</strong> small group courses with a maximum of six participants, ensuring a collaborative yet focused environment, connecting with others in interactive, live lessons.</li>
+                </ul>
+                <p><strong class="text-uppercase">For B2B clients</strong>, we offer customized training programs designed to elevate your team's skills in alignment with your business goals. Simply fill out our contact form on the 
+                    <a href="{% url 'companies' %}" aria-label="go to the companies page">Companies section</a>, and we'll work with you to create a tailored training plan led by certified teachers, enhancing your employees' professional growth, and your company's growth.</p>
+                    
+                <p>At English Grows, we're committed to delivering effective and engaging online English classes that empower individuals and organizations alike. With our live lessons, you'll have the opportunity to learn English in real-time, building skills under the guidance of a certified teacher.</p> 
+                <p><strong>Join us and take the next step in your English learning journey with our trusted online English classes!</strong></p> 
+            </div>  
+        </div>
+    </div>
+</div>
+{% endblock %}

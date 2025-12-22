@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block nav %}
+<div class="row bg-custom-dark">
+  <nav class="navbar navbar-dark navbar-expand-lg w-100 pb-0">
+      {% include 'includes/mobile_top_header.html' %}
+      {% include 'includes/main_nav_individuals.html' %}
+      <button class="navbar-toggler d-block d-lg-none ml-3 mr-2 mr-sm-4" type="button" data-toggle="collapse" data-target="#main-nav"
+        aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  </nav>
+</div>
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container d-none">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay1" aria-hidden="true"></div>
+<div class="overlay" aria-hidden="true"></div>
+
+<div id="individual-services" class="container-fluid" aria-labelledby="page-header">
+    <div class="row">
+        <div class="col text-center mt-2">
+            <h2 id="page-header" class="pt-5"><span class="eg-title">Packs Made </span><span class="charmonman-bold larger-title">for you</span></h2>
+            {% for c in current_types %}
+                <a class="type-badge text-decoration-none" href="{% url 'individual_services' %}?q={{ c.name }}" aria-label="View all services of type {{ c.friendly_name }}">
+                    <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                </a>
+            {% endfor %}
+            <hr class="w-75 mb-3 mb-md-1">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="row mt-2 mb-3 mt-md-1 mb-md-2">
+                <div class="col-12 col-md-6 col-lg-4 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="sort-select-wrapper w-100 w-md-50 w-lg-25" id="sort-bar">
+                        <form method="GET" action="{% url 'individual_services' %}">
+                            <label for="sort-selector" class="sr-only">Sort services by selected option</label>
+                            <select id="sort-selector" name="sort" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}" title="Sort services">
+                                <option value="" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="type_asc" {% if current_sorting == 'type_asc' %}selected{% endif %}>Type (A-Z)</option>
+                                <option value="type_desc" {% if current_sorting == 'type_desc' %}selected{% endif %}>Type (Z-A)</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-8 float-left order-md-first">
+                    <p class="text-muted mt-3 text-center text-md-left">
+                        {% if search_term or current_types or current_sorting != 'None_None' %}
+                            <span class="small clean-link"><a class="text-dark" href="{% url 'individual_services' %}" aria-label="Return to full list of available services">All Packs</a> | </span>
+                        {% endif %}
+                        {{ services|length }}{% if services|length == 1 %} Pack{% else %} Packs{% endif %}{% if current_types %} found for <strong>{{ current_types }}</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row">
+                {% for service in services %}
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 pt-5 pr-2 pl-2 mr-md-0 pl-md-0">
+                        <div class="card">
+                            <a href="{% url 'pack_details' service.id %}" aria-label="View details for {{ service.name }}">
+                            {% if service.image %}
+                                <img class="card-img-top img-fluid w-80" src="{{ service.image.url }}" alt="{{ service.name }}" height="180">
+                            {% elif service.image_url %}
+                                <img class="card-img-top img-fluid w-80" src="{{ service.image_url }}" alt="{{ service.name }}" height="180">
+                            {% else %}
+                                <img class="card-img-top img-fluid w-80" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}" height="180">
+                            {% endif %}
+                            </a>
+                            
+                            <a href="{% url 'pack_details' service.id %}" aria-label="View details for {{ service.name }}">
+                                <div class="card-body">
+                                    <h3 class="mb-0">{{ service.name }}
+                                        <br>TOTAL: {{ service.number_hours }} Hours
+                                    </h3>                                    
+                                </div>
+                            </a>
+                            <div class="card-footer bg-white pt-4 {% if user.is_authenticated and user.is_superuser %} pb-0{% else %}pb-4 {% endif %} border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        {% if service.type %}
+                                        <p class="small mt-1 mb-0">
+                                            <a class="text-muted" href="{% url 'individual_services' %}?type={{ service.type.name }}" aria-label="View all services of type {{ service.type.friendly_name }}">
+                                                {% if service.type.name == "individuals_private" or service.type.name == "individuals_groups" %}
+                                                    <i class="fas fa-desktop mr-1" aria-hidden="true"></i>
+                                                {% else %}
+                                                    <i class="fas fa-graduation-cap mr-1" aria-hidden="true"></i>
+                                                {% endif %}
+                                                {{ service.type.friendly_name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+                                        <p class="lead mb-0 mt-3 text-left font-weight-bold">{{ service.price }} €</p>
+                                        {% if request.user.is_superuser %}
+                                        <small class="ml-3">
+                                            <p>
+                                                <a href="{% url 'edit_service' service.id %}" aria-label="Edit {{ service.name }}"><i class="fas fa-pencil-square fa-2x pr-3" aria-hidden="true"></i></a><span class="vertical-line"> | </span> 
+                                                <a href="{% url 'delete_service' service.id %}" class="text-danger font-weight-bold" aria-label="Delete {{ service.name }}"><i class="fas fa-times-circle fa-2x pl-3" aria-hidden="true"></i></a>    
+                                            </p>
+                                        </small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-2 btt-button shadow-sm">
+        <span class="btt-link d-flex h-100 text-black mx-auto my-auto" title="Go back to the top of the page">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </span>    
+    </div>    
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+    
+    <script>
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
+{% endblock %}

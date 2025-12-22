@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="my-4 text-white eg-title">Delete Service</h2>
+    <p class="text-white">Are you sure you want to delete the service <strong>{{ service.name }}</strong>?</p>
+    
+    <form method="POST" action="{% url 'delete_service' service.id %}">
+        {% csrf_token %}
+        <button type="submit" name="confirm_delete" class="btn btn-danger rounded-pill">Confirm</button>
+        <button type="submit" name="cancel_delete" class="btn btn-custom rounded-pill">Keep Service</button>
+    </form>
+</div>
+{% endblock %}

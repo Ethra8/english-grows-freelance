@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/bag/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/companies/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/about/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?sort=type&amp;direction=asc</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?type=individuals_private</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?type=individuals_cambridge_individual</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?type=individuals_private,individuals_cambridge_individual</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?type=individuals_groups</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?type=individuals_cambridge_group</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?type=individuals_groups,individuals_cambridge_group</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/accounts/login/?next=/individual_services/add_service/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/2/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/3/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/5/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/6/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/7/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/8/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/1/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/9/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/4/</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/individual_services/?q=</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/accounts/signup/?next=%2Findividual_services%2Fadd_service%2F</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://english-grows-477471d17e50.herokuapp.com/accounts/login/?next=%2Findividual_services%2Fadd_service%2F</loc>
+  <lastmod>2024-11-08T13:35:11+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>

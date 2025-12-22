@@ -1,0 +1,7 @@
+English Grows has received a message from {{ name }} at {{ email }}
+
+User has written the following:
+
+{{ message }}
+
+English Grows

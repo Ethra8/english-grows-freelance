@@ -1,0 +1,21 @@
+{
+  "name": "English Grows",
+  "short_name": "ENGG",
+  "description": "We offer online professional English teaching services in virtual classrooms with a reduced group or individual format.",
+  "start_url": "https://english-grows-477471d17e50.herokuapp.com/",
+  "display": "standalone",
+  "background_color": "#008080",
+  "theme_color": "#FFFFFF",
+  "icons": [
+      {
+          "src": "/static/icons/logo_englishgrows.png",
+          "sizes": "500x500",
+          "type": "image/png"
+      },
+      {
+          "src": "/static/icons/favicon.ico",
+          "sizes": "32x32",
+          "type": "image/png"
+      }
+  ]
+}

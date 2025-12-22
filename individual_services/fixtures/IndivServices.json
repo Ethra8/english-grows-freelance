@@ -1,0 +1,114 @@
+[
+    {
+       "pk":1,
+       "model":"individual_services.IndivService",
+       "fields":{
+          "type":1,
+          "name":"INDIVIDUAL LESSONS: 5 Hours",
+          "number_hours":"5",
+          "duration_weeks":"999",
+          "description":"Improve your English with this 5 hour lesson pack. Its use is unlimited in time, with no expiration date. Book each lesson at your own convience!",
+          "price":123.00,
+          "image_url":"http://s7d9.scene7.com/is/image/JCPenney/DP0709201205510679M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+          "image":"individuals_individuals1.jpg"
+       }
+    },
+    {
+       "pk":2,
+       "model":"individual_services.IndivService",
+       "fields":{
+          "type":1,
+          "name":"INDIVIDUAL LESSONS: 10 Hours",
+          "number_hours":"10",
+          "duration_weeks":"999",
+          "description":"Improve your English with this 10 hour lesson pack. Its use is unlimited in time, with no expiration date. Book each lesson at your own convience!",
+          "price":242.00,
+          "image_url":"http://s7d9.scene7.com/is/image/JCPenney/DP0113201617034987M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+          "image":"individuals_individuals2.jpg"
+       }
+    },
+    {
+       "pk":3,
+       "model":"individual_services.IndivService",
+       "fields":{
+          "type":1,
+          "name":"INDIVIDUAL LESSONS: 25 Hours",
+          "number_hours":"25",
+          "duration_weeks":"999",
+          "description":"Improve your English with this 25 hour lesson pack. Its use is unlimited in time, with no expiration date. Book each lesson at your own convience!",
+          "price":496.00,
+          "image_url":"http://s7d9.scene7.com/is/image/JCPenney/DP1230201417013175M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+          "image":"individuals_individuals3.jpg"
+       }
+    },
+    {
+      "pk":4,
+      "model":"individual_services.IndivService",
+      "fields":{
+         "type":2,
+         "name":"REDUCED GROUP: 1.5h/week",
+         "number_hours":"6",
+         "duration_weeks":"4",
+         "description":"Join a reduced group online with a maximum of 6 participants. Broad timetables available, including Saturdays. The rate will be charged monthly on your bank account. Free cancellation policy.",
+         "price":96.00,
+         "image_url":"http://s7d9.scene7.com/is/image/JCPenney/DP0709201205510679M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+         "image":"individuals_groups1.jpg"
+      }
+   },
+   {
+      "pk":5,
+      "model":"individual_services.IndivService",
+      "fields":{
+         "type":2,
+         "name":"REDUCED GROUP: 3h/week",
+         "number_hours":"12",
+         "duration_weeks":"4",
+         "description":"Join a reduced group online with a maximum of 6 participants. Broad timetables available, including Saturdays. The rate will be charged monthly on your bank account. Free cancellation policy.",
+         "price":192.00,
+         "image_url":"",
+         "image":"individuals_groups2.jpg"
+      }
+   },
+   {
+      "pk":6,
+      "model":"individual_services.IndivService",
+      "fields":{
+         "type":2,
+         "name":"REDUCED GROUP: 5h/week",
+         "number_hours":"20",
+         "duration_weeks":"4",
+         "description":"Join a reduced group online with a maximum of 6 participants. Broad timetables available, including Saturdays. The rate will be charged monthly on your bank account. Free cancellation policy.",
+         "price":482.00,
+         "image_url":"",
+         "image":"individuals_groups3.jpg"
+      }
+   },
+   {
+      "pk":7,
+      "model":"individual_services.IndivService",
+      "fields":{
+         "type":4,
+         "name":" REDUCED GROUP | CAMBRIDGE EXAMS PREPARATION: 3h/week",
+         "number_hours":"12",
+         "duration_weeks":"4",
+         "description":"Prepare you Cambridge exams with a specialized teacher that will help you succeed. Join a reduced group online with a maximum of 6 participants. Broad timetables available, including Saturdays. The rate will be charged monthly on your bank account. Free cancellation policy.",
+         "price":192.00,
+         "image_url":"",
+         "image":"individuals_groups2.jpg"
+      }
+   },
+   {
+      "pk":8,
+      "model":"individual_services.IndivService",
+      "fields":{
+         "type":3,
+         "name":"INDIVIDUAL CAMBRIDGE EXAMS PREPARATION: 80 Hours",
+         "number_hours":"80",
+         "duration_weeks":"40",
+         "description":"Improve your English with this complete preparation. As Cambridge recommends between 80 and 120 hours to schieve each level of the Common European Frame of Languages (CEFR). Book each lesson at your own convience!",
+         "price":1442.00,
+         "image_url":"http://s7d9.scene7.com/is/image/JCPenney/DP0113201617034987M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+         "image":"individuals_individuals2.jpg"
+      }
+   }
+]

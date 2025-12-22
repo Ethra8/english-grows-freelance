@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay2"></div>
+    <div id="bag" class="container mb-2 ml-0 pl-0 pl-sm-3 pl-md-5 pr-0 w-100">
+
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="eg-title">Shopping Bag</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                <div class="table-wrapper" style="overflow-x: auto;">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <th class="w-25" scope="col">Product Info</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in bag_items %}
+                                <tr>
+                                    <!-- Image column -->
+                                    <td class="p-3" data-label="Product Info">
+                                        {% if item.service.image %}
+                                        <a href="{% url 'pack_details' item.service.id %}" aria-label="go to the service details page">
+                                            <img class="img-fluid img-bag" src="{{ item.service.image.url }}" alt="{{ item.service.name }}">
+                                        </a>
+                                        {% else %}
+                                        <a href="{% url 'pack_details' item.service.id %}" aria-label="go to the service details page">
+                                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.service.name }}">
+                                        </a>
+                                        {% endif %}
+                                    </td>
+                                    <!-- Name Column -->
+                                    <td class="py-3" data-label="Name">
+                                        <p class="my-0"><strong>{{ item.service.name }}</strong></p>
+                                    </td>
+                                    <!-- Price Column -->
+                                    <td class="py-3" data-label="Price">
+                                        <p class="my-0">{{ item.service.price }} €</p>
+                                    </td>
+                                    <!-- Quantity Column -->
+                                    <td class="py-3" data-label="Qty">
+                                        <form method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                            {% csrf_token %}
+                                            <div class="input-group">
+                                                <input 
+                                                    class="form-control form-control-sm qty-input" 
+                                                    type="number" 
+                                                    name="quantity" 
+                                                    value="{{ item.quantity }}" 
+                                                    min="1" 
+                                                    max="99" 
+                                                    inputmode="numeric" 
+                                                    pattern="\d*" 
+                                                    aria-label="number of items">
+                                                <div class="input-group-append">
+                                                    <button type="submit" class="btn btn-sm btn-black rounded-0">
+                                                        <i class="fas fa-cart-arrow-down fa-sm" aria-hidden="true"></i> Update
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </td>
+                                    <!-- Subtotal Column -->
+                                    <td class="py-3" data-label="Subtotal">
+                                        <p class="my-0">{{ item.service.price | calc_subtotal:item.quantity }} €</p>
+                                    </td>
+                                    <!-- Remove Item -->
+                                    <td>
+                                        <form method="POST" action="{% url 'remove_bag_item' item.item_id %}">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-sm btn-danger" aria-label="Remove item from bag">
+                                                <i class="fas fa-times-circle fa-sm" aria-hidden="true"></i> Remove
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                <tr>
+                                    <td colspan="5" class="text-right bg-custom-dark py-auto pr-3">
+                                        <p id="bag-grand-total" class="mt-4 text-right"><strong>Grand Total: {{ grand_total|floatformat:2 }} €</strong></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="d-flex flex-wrap">
+                        <a href="{% url 'individual_services' %}" class="btn btn-custom rounded-pill btn-lg mt-5 mr-0 mx-auto ml-sm-0" aria-label="go back to services">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Go Back</span>
+                        </a>
+
+                        <a href="{% url 'checkout' %}" class="btn btn-custom-teal rounded-pill btn-lg mx-auto mr-sm-0 mt-5 order-first order-md-2" aria-label="go to secure checkout page">
+                            <span class="text-uppercase">Secure Checkout</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </a>
+                    </div>
+                {% else %}
+                    <p class="lead mb-5">Your bag is empty.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="https://english-grows1.s3.eu-west-3.amazonaws.com/static/js/quantity_selector.js"></script>
+{% endblock %}

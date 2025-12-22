@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <h2>Thank you for your order, {{ full_name }}!</h2>
+    <p>Your order : {{ order_number }}</p>
+    <p>Order Details: </p>
+        {% for item in order.lineitems.all %}
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <p class="mb-0 text-black font-weight-bold">
+                    {{ item.service.name }}
+                </p>
+            </div>
+            <div class="col-12 col-md-8 text-md-right">
+                <p class="mb-0">
+                    {{ item.quantity }} x {{item.service.price}} € each
+                </p>
+            </div>
+        </div>    
+        {% endfor %}
+    <p>The total amount for your order is: {{ grand_total }} €</p>
+    <p>We are processing your order and will shortly send further details on how to access your learning services</p>
+    <p>Best regards,</p>
+    <p>English Grows Admin Team</p>
+</body>
+</html>

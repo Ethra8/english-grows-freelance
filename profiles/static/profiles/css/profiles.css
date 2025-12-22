@@ -1,0 +1,51 @@
+.order-history {
+    min-height: fit-content; /* height of profile form + submit button */
+    overflow-y: auto;
+}
+
+#ordersAccordion .card {
+    padding: 10px 20px;
+    margin: 20px auto;
+    height: 100%;
+    max-height: 100%; /* height of profile form + submit button */
+    border-radius: 10px !important;
+    border: solid 2px #003366;
+    background-color: teal;
+}
+
+#ordersAccordion .card-header {
+    color: white;
+}
+
+#ordersAccordion .card-body {
+    height: 100%;
+    max-height: 100%; /* height of profile form + submit button */
+    border-radius: 20px !important;
+    border: solid 2px #003366;
+    background-color: antiquewhite;
+}
+
+#profile .btn {
+    background-color: #003366;
+    color: antiquewhite;
+    text-transform: uppercase;
+}
+
+#profile-update-form .form-control {
+    color: #000;
+    border-radius: 20px;
+}
+
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+/* color of placeholder in CountryField */
+#id_default_country option:first-child {
+    color: #aab7c4;
+}
