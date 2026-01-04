@@ -10,3 +10,11 @@ cloudinary_python.txt
 *.sqlite3
 *.pycvenv/
 .venv/
+# Python
+venv/
+*.pyc
+# Env
+.env
+# OS
+.DS_Store
+Thumbs.db
