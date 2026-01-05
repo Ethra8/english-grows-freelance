@@ -1,6 +1,14 @@
-English Grows has received a message from {{ name }} at {{ email }}
+English Grows has received a message from:
+COMPANY NAME: {{ company_name }} 
+CONTACT NAME:  {{ name }} 
+EMAIL: {{ email }}
 
-User has written the following:
+{{ name }} want INFO about:
+
+Individual Packs?: {{ individual_packs }}
+Reduced Groups?: {{ reduced_groups }}
+
+User has written the following MESSAGE:
 
 {{ message }}
 

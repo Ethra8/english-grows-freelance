@@ -1,1 +1,1 @@
-English Grows Message Received: {{ subject }}
+Company Message Received: {{ subject }} {{ company_name }}

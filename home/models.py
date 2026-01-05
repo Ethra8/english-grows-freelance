@@ -27,17 +27,20 @@ class CompanyContact(models.Model):
     def save(self, *args, **kwargs):
         """Saves the email to the database and sends it to the admin."""
         email = self.email
+        company_name = self.company_name
         name = self.name
-        subject = 'New Request from Company'
+        individual_packs = self.individual_packs
+        reduced_groups = self.reduced_groups
+        subject = 'New Request from'
         message = self.message
 
         # Fills in the email templates and then send the email.
         contact_subject = render_to_string(
             'contact/emails/contact_subject.txt',
-            {'subject': subject})
+            {'subject': subject, 'company_name' : company_name})
         contact_body = render_to_string(
             'contact/emails/contact_body.txt',
-            {'name': name, 'email': email, 'message': message})
+            {'company_name': company_name, 'name': name, 'email': email, 'individual_packs': individual_packs, 'reduced_groups': reduced_groups, 'message': message})
         send_mail(contact_subject,
                   contact_body,
                   email,
